@@ -22,10 +22,14 @@ namespace TicketClassLibrary.Tests
         }
 
         [TestMethod()]
-        [DataRow(false)]
-        public void PriceTestNoBizz(bool brobizz)
+        [DataRow(false, 29)]
+        [DataRow(false, 28)]
+        
+        public void PriceTestNoBizz(bool brobizz, int day)
         {
-            double expected = 240;
+            _car.Date = new DateTime(2024, 9, day); 
+
+            double expected = 240*0.8;
             double actual = _car.Price(brobizz);
             Assert.AreEqual(expected, actual);
         }
@@ -49,10 +53,24 @@ namespace TicketClassLibrary.Tests
 
         [TestMethod()]
         [DataRow("12345678")]
+        [DataRow(null)]
         public void LicenseplateIllegalTest(string number)
         {
             Assert.ThrowsException<ArgumentException>(() => { _car.Licenseplate = number; }); 
 
         }
+
+        [TestMethod()]
+        [DataRow("1234567")]
+        
+        public void Licenseplate(string number)
+        {
+            string expected = number;
+            _car.Licenseplate = number;
+            Assert.AreEqual(expected, _car.Licenseplate);
+
+        }
+
+
     }
 }

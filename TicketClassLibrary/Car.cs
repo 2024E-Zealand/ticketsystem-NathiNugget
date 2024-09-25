@@ -13,6 +13,10 @@
         public override double Price(bool brobizz)
         {
             double _price = 240; 
+            if (Date.DayOfWeek == DayOfWeek.Saturday || Date.DayOfWeek == DayOfWeek.Sunday)
+            {
+                _price *= 0.8; 
+            }
             if (brobizz)
             {
                 return _price * 0.95;

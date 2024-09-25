@@ -13,6 +13,11 @@ namespace TicketClassLibrary
     public abstract class Vehicle
     {
         /// <summary>
+        /// Instance-field for licenseplate
+        /// </summary>
+        private string _licenseplate;
+
+        /// <summary>
         /// Method signature for the Price of a vehicle to be overwritten
         /// </summary>
         /// <returns>Price of the vehicle</returns>
@@ -35,7 +40,7 @@ namespace TicketClassLibrary
 
         public string Licenseplate
         {
-            get { return Licenseplate; }
+            get { return _licenseplate; }
 
             set
             {
@@ -43,7 +48,7 @@ namespace TicketClassLibrary
                 {
                     throw new ArgumentException("License plate must not be longer than 7 characters!");
                 }
-                Licenseplate = value;
+                _licenseplate = value;
             }
         }
 
