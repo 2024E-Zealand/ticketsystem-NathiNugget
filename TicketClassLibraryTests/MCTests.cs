@@ -31,7 +31,7 @@ namespace TicketClassLibrary.Tests
         public void VehicleTest()
         {
             string expected = "MC"; 
-            string actual = _mc.Vehicle();
+            string actual = _mc.VehicleType();
         }
     }
 }
