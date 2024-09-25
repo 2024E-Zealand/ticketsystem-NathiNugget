@@ -7,7 +7,7 @@
     {
 
         /// <summary>
-        /// Method to return price of the instance
+        /// Method to return price of the car. If it is Saturday or Sunday or if the car has brobizz, certain discounts are given. 
         /// </summary>
         /// <returns>Price of the instance</returns>
         public override double Price(bool brobizz)

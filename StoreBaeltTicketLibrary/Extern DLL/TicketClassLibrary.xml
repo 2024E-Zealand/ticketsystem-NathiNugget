@@ -11,7 +11,7 @@
         </member>
         <member name="M:TicketClassLibrary.Car.Price(System.Boolean)">
             <summary>
-            Method to return price of the instance
+            Method to return price of the car. If it is Saturday or Sunday or if the car has brobizz, certain discounts are given. 
             </summary>
             <returns>Price of the instance</returns>
         </member>
@@ -38,6 +38,11 @@
         <member name="T:TicketClassLibrary.Vehicle">
             <summary>
             Represents the skeleton of a vehicle to be further described in lower classes
+            </summary>
+        </member>
+        <member name="F:TicketClassLibrary.Vehicle._licenseplate">
+            <summary>
+            Instance-field for licenseplate
             </summary>
         </member>
         <member name="M:TicketClassLibrary.Vehicle.Price(System.Boolean)">

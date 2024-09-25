@@ -44,6 +44,17 @@ namespace TicketClassLibrary.Tests
         }
 
         [TestMethod()]
+        [DataRow(true, 29)]
+        [DataRow(true, 28)]
+        public void PriceTestBroBizz(bool brobizz, int day)
+        {
+            _car.Date = new DateTime(2024, 9, day);
+            double expected = (240 * 0.8) * 0.95;
+            double actual = _car.Price(brobizz);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod()]
         public void VehicleTypeTest()
         {
             string expected = "Car";
