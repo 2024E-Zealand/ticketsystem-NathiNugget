@@ -25,16 +25,24 @@ namespace TicketClassLibrary.Tests
         public void PriceTest()
         {
             double expected = 240;
-            double actual = _car.Price(); 
+            double actual = _car.Price();
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod()]
         public void VehicleTypeTest()
         {
-            string expected = "Car"; 
+            string expected = "Car";
             string actual = _car.VehicleType();
             Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod()]
+        [DataRow("12345678")]
+        public void LicenseplateIllegalTest(string number)
+        {
+            Assert.ThrowsException<ArgumentException>(() => { _car.Licenseplate = number; }); 
+
         }
     }
 }

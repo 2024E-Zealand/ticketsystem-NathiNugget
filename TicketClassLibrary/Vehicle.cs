@@ -25,7 +25,7 @@ namespace TicketClassLibrary
         public abstract string VehicleType();
 
         /// <summary>
-        /// Property for a Licenseplate for an instance
+        /// Property for a Licenseplate for the vehicle
         /// </summary>
 
 
@@ -33,7 +33,20 @@ namespace TicketClassLibrary
 
 
 
-        public string Licenseplate {  get; set; }
+        public string Licenseplate
+        {
+            get { return Licenseplate; }
+
+            set
+            {
+                if (value == null || value.Length > 7)
+                {
+                    throw new ArgumentException("License plate must not be longer than 7 characters!");
+                }
+                Licenseplate = value;
+            }
+        }
+
         /// <summary>
         /// Property for a Date for an instance
         /// </summary>
