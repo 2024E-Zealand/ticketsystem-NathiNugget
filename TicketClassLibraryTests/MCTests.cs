@@ -24,7 +24,7 @@ namespace TicketClassLibrary.Tests
         [DataRow(true)]
         public void PriceTestBroBizz(bool brobizz)
         {
-            double expected = 125 * 0.95;
+            double expected = 73;
             double actual = _mc.Price(brobizz);
             Assert.AreEqual(expected, actual);
         }
@@ -33,7 +33,7 @@ namespace TicketClassLibrary.Tests
         [DataRow(false)]
         public void PriceTestNoBizz(bool brobizz)
         {
-            double expected = 125;
+            double expected = 210; 
             double actual = _mc.Price(brobizz); 
             Assert.AreEqual(expected, actual);
         }
@@ -41,7 +41,7 @@ namespace TicketClassLibrary.Tests
         [TestMethod()]
         public void VehicleTest()
         {
-            string expected = "MC"; 
+            string expected = "Oresund MC"; 
             string actual = _mc.VehicleType();
             Assert.AreEqual(expected, actual);
         }

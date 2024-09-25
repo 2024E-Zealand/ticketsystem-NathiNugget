@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketClassLibraryTests", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreBaeltTicketLibrary", "StoreBaeltTicketLibrary\StoreBaeltTicketLibrary.csproj", "{DD792528-DE9F-4241-90DF-C03DBE94432F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oresundbron", "Oresundbron\Oresundbron.csproj", "{3725320C-D5D4-4AEC-AE42-E1789D5D53FA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{DD792528-DE9F-4241-90DF-C03DBE94432F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD792528-DE9F-4241-90DF-C03DBE94432F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD792528-DE9F-4241-90DF-C03DBE94432F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3725320C-D5D4-4AEC-AE42-E1789D5D53FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3725320C-D5D4-4AEC-AE42-E1789D5D53FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3725320C-D5D4-4AEC-AE42-E1789D5D53FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3725320C-D5D4-4AEC-AE42-E1789D5D53FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

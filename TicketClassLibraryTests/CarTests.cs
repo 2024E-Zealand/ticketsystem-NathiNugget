@@ -27,9 +27,9 @@ namespace TicketClassLibrary.Tests
         
         public void PriceTestNoBizz(bool brobizz, int day)
         {
-            _car.Date = new DateTime(2024, 9, day); 
+            _car.Date = new DateTime(2024, 9, day);
 
-            double expected = 240*0.8;
+            double expected = 410;
             double actual = _car.Price(brobizz);
             Assert.AreEqual(expected, actual);
         }
@@ -38,7 +38,7 @@ namespace TicketClassLibrary.Tests
         [DataRow(true)]
         public void PriceTestBroBizz(bool brobizz)
         {
-            double expected = 240 * 0.95;
+            double expected = 161; 
             double actual = _car.Price(brobizz);
             Assert.AreEqual(expected, actual);
         }
@@ -48,8 +48,7 @@ namespace TicketClassLibrary.Tests
         [DataRow(true, 28)]
         public void PriceTestBroBizz(bool brobizz, int day)
         {
-            _car.Date = new DateTime(2024, 9, day);
-            double expected = (240 * 0.8) * 0.95;
+            double expected = 161; 
             double actual = _car.Price(brobizz);
             Assert.AreEqual(expected, actual);
         }
@@ -57,7 +56,7 @@ namespace TicketClassLibrary.Tests
         [TestMethod()]
         public void VehicleTypeTest()
         {
-            string expected = "Car";
+            string expected = "Oresund car";
             string actual = _car.VehicleType();
             Assert.AreEqual(expected, actual);
         }
@@ -82,6 +81,14 @@ namespace TicketClassLibrary.Tests
 
         }
 
+
+        [TestMethod]
+        [DataRow(29)]
+        public void TestVehicleDate(int day)
+        {
+            _car.Date = new DateTime(2024, 9, day);
+            Assert.IsNotNull(_car.Date);
+        }
 
     }
 }

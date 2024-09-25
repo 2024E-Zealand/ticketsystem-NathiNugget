@@ -20,17 +20,17 @@ namespace TicketClassLibrary
         /// <returns>A string: "MC".</returns>
         public override string VehicleType()
         {
-            return "MC"; 
+            return "Oresund MC"; 
         }
 
 /// <inheritdoc/>
 
         public override double Price(bool brobizz)
         {
-            double _price = 125;
+            double _price = 210;
             if (brobizz)
             {
-                return _price * 0.95;
+                return _price - 137; 
             }
             return _price;
         }
