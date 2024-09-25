@@ -10,10 +10,15 @@
         /// Method to return price of the instance
         /// </summary>
         /// <returns>Price of the instance</returns>
-        public override double Price()
+        public override double Price(bool brobizz)
         {
+            double _price = 240; 
+            if (brobizz)
+            {
+                return _price * 0.95;
+            }
 
-            return 240; 
+            return _price; 
         }
 
         /// <summary>

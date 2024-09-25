@@ -25,9 +25,14 @@ namespace TicketClassLibrary
 
 /// <inheritdoc/>
 
-        public override double Price()
+        public override double Price(bool brobizz)
         {
-            return 125;
+            double _price = 125;
+            if (brobizz)
+            {
+                return _price * 0.95;
+            }
+            return _price;
         }
 
         

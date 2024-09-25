@@ -16,7 +16,7 @@ namespace TicketClassLibrary
         /// Method signature for the Price of a vehicle to be overwritten
         /// </summary>
         /// <returns>Price of the vehicle</returns>
-        public abstract double Price();
+        public abstract double Price(bool brobizz);
 
         /// <summary>
         /// Returns the type of the vehicle

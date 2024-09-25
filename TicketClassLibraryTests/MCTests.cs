@@ -21,10 +21,21 @@ namespace TicketClassLibrary.Tests
         }
 
         [TestMethod()]
-        public void PriceTest()
+        [DataRow(true)]
+        public void PriceTestBroBizz(bool brobizz)
+        {
+            double expected = 125 * 0.95;
+            double actual = _mc.Price(brobizz);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod()]
+        [DataRow(false)]
+        public void PriceTestNoBizz(bool brobizz)
         {
             double expected = 125;
-            double actual = _mc.Price(); 
+            double actual = _mc.Price(brobizz); 
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod()]
@@ -32,6 +43,15 @@ namespace TicketClassLibrary.Tests
         {
             string expected = "MC"; 
             string actual = _mc.VehicleType();
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod()]
+        [DataRow("12345678")]
+        public void LicenseplateIllegalTest(string number)
+        {
+            Assert.ThrowsException<ArgumentException>(() => { _mc.Licenseplate = number; });
+
         }
     }
 }
