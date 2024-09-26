@@ -21,19 +21,22 @@ namespace TCPServerObligatiryAssignment
             Console.WriteLine($"Server is now listening on port: {_PORT}");
             while (true)
             {
+                TcpClient socket = server.AcceptTcpClient();
+                
                 Task.Run(() =>
                 {
-                    TcpClient socket = server.AcceptTcpClient();
+                    Console.WriteLine($"Connected to: {socket.Client.LocalEndPoint}");
                     DoOneClient(socket);
-
-                });
+                }); 
+                
             }
 
         }
 
         private int[] ReadArgs(StreamReader sr)
         {
-            return sr.ReadLine().Split(' ').Select(int.Parse).ToArray();
+            string input = sr.ReadLine();
+            return input.Split(' ').Select(int.Parse).ToArray();
         }
 
         private void DoOneClient(TcpClient socket)
@@ -51,33 +54,34 @@ namespace TCPServerObligatiryAssignment
                 {
                     case "Add":
                         {
-                            sw.WriteLine("Input numbers");
+                            Console.WriteLine(toDo);
+                            sw.Write("Input numbers");
                             sw.Flush(); 
                             args = ReadArgs(sr);
                             result = args[0] + args[1];
-                            sw.WriteLine(result);
+                            sw.Write(result);
                             sw.Flush(); 
 
                         }
                         break;
                     case "Random":
                         {
-                            sw.WriteLine("Input numbers"); 
+                            sw.Write("Input numbers"); 
                             sw.Flush();
                             args = ReadArgs(sr); 
                             Random r = new Random();
-                            result = r.Next(args[1]+1, args[0]);
-                            sw.WriteLine(result);
+                            result = r.Next(args[0], args[1]+1);
+                            sw.Write(result);
                             sw.Flush();
                         }
                         break;
                     case "Subtract":
                         {
-                            sw.WriteLine("Input numbers"); 
+                            sw.Write("Input numbers"); 
                             sw.Flush();
                             args = ReadArgs(sr);
                             result = args[0] - args[1];
-                            sw.WriteLine(result);
+                            sw.Write(result);
                             sw.Flush();
 
                         }
