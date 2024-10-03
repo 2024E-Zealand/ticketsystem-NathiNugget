@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Net.Sockets;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,48 +49,63 @@ namespace TCPServerObligatiryAssignment
 
             while (true)
             {
-                string toDo = sr.ReadLine()!.Trim();
-
-                int result = 0;
-                switch (toDo)
+                try
                 {
-                    case "Add":
-                        {
-                            Console.WriteLine(toDo);
-                            sw.Write("Input numbers");
-                            sw.Flush(); 
-                            args = ReadArgs(sr);
-                            result = args[0] + args[1];
-                            sw.Write(result);
-                            sw.Flush(); 
+                    string toDo = sr.ReadLine()!.Trim();
 
-                        }
-                        break;
-                    case "Random":
-                        {
-                            sw.Write("Input numbers"); 
-                            sw.Flush();
-                            args = ReadArgs(sr); 
-                            Random r = new Random();
-                            result = r.Next(args[0], args[1]+1);
-                            sw.Write(result);
-                            sw.Flush();
-                        }
-                        break;
-                    case "Subtract":
-                        {
-                            sw.Write("Input numbers"); 
-                            sw.Flush();
-                            args = ReadArgs(sr);
-                            result = args[0] - args[1];
-                            sw.Write(result);
-                            sw.Flush();
+                    int result = 0;
+                    string _printToConsole = ""; 
+                    switch (toDo)
+                    {
+                        
+                        case "Add":
+                            {
+                                Console.WriteLine(toDo);
+                                sw.Write("Input numbers");
+                                sw.Flush();
+                                args = ReadArgs(sr);
+                                result = args[0] + args[1];
+                                _printToConsole = $"Add: {args[0]} + {args[1]}"; 
+                                sw.Write(result);
+                                sw.Flush();
 
-                        }
-                        break; 
-                    default:
-                        break;
+                            }
+                            break;
+                        case "Random":
+                            {
+                                sw.Write("Input numbers");
+                                sw.Flush();
+                                args = ReadArgs(sr);
+                                Random r = new Random();
+                                result = r.Next(args[0], args[1] + 1);
+                                _printToConsole = $"Random: {args[0]} and {args[1]}";
+                                sw.Write(result);
+                                sw.Flush();
+                            }
+                            break;
+                        case "Subtract":
+                            {
+                                sw.Write("Input numbers");
+                                sw.Flush();
+                                args = ReadArgs(sr);
+                                result = args[0] - args[1];
+                                _printToConsole = $"Subtract: {args[0]} - {args[1]}";
+                                sw.Write(result);
+                                sw.Flush();
+
+                            }
+                            break;
+                        default:
+                            break;
+                    }
                 }
+
+                catch (Exception e)
+                {
+                    Console.WriteLine("Client disconnected");
+                    break; 
+                }
+                
 
 
 
