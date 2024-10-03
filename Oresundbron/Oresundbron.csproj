@@ -7,7 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Extern DLL\" />
+    <Compile Remove="Extern DLL\**" />
+    <EmbeddedResource Remove="Extern DLL\**" />
+    <None Remove="Extern DLL\**" />
   </ItemGroup>
 
 </Project>
