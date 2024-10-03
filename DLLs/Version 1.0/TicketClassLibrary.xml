@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TicketClassLibrary</name>
+    </assembly>
+    <members>
+        <member name="T:TicketClassLibrary.Car">
+            <summary>
+            This class represents a car
+            </summary>
+        </member>
+        <member name="M:TicketClassLibrary.Car.VehicleType">
+            <inheritdoc/>
+        </member>
+        <member name="M:TicketClassLibrary.Car.Price(System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="P:TicketClassLibrary.Car.Licenseplate">
+            <inheritdoc/>
+        </member>
+        <member name="P:TicketClassLibrary.Car.Date">
+            <inheritdoc/>
+        </member>
+        <member name="M:TicketClassLibrary.MC.Price(System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TicketClassLibrary.MC.VehicleType">
+            <inheritdoc/>
+        </member>
+        <member name="P:TicketClassLibrary.MC.Licenseplate">
+            <inheritdoc/>
+        </member>
+        <member name="P:TicketClassLibrary.MC.Date">
+            <inheritdoc/>
+        </member>
+        <member name="T:TicketClassLibrary.Vehicle">
+            <summary>
+            This class represents a vehicle. This class is an abstract base class
+            </summary>
+        </member>
+        <member name="M:TicketClassLibrary.Vehicle.VehicleType">
+            <summary>
+            Method to fetch vehicle type for the given implementation
+            </summary>
+            <returns>The type of the vehicle</returns>
+        </member>
+        <member name="M:TicketClassLibrary.Vehicle.Price(System.Boolean)">
+            <summary>
+            Get the price of a vehicle
+            </summary>
+            <returns>Price of a vehicle</returns>
+        </member>
+        <member name="P:TicketClassLibrary.Vehicle.Licenseplate">
+            <summary>
+            Licenseplate for vehicle
+            </summary>
+        </member>
+        <member name="P:TicketClassLibrary.Vehicle.Date">
+            <summary>
+            Date for vehicle
+            </summary>
+        </member>
+    </members>
+</doc>

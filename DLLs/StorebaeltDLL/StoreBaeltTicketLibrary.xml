@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>StoreBaeltTicketLibrary</name>
+    </assembly>
+    <members>
+        <member name="T:StoreBaeltTicketLibrary.StoreBaeltsCar">
+            <summary>
+            This class inherits from Car using the DLL and has extra savings on Saturdays and Sundays
+            </summary>
+        </member>
+        <member name="M:StoreBaeltTicketLibrary.StoreBaeltsCar.#ctor(System.String,System.DateTime)">
+            <summary>
+            This constructor calls to Car
+            </summary>
+            <param name="lPlate">License plate</param>
+            <param name="lDate">Date</param>
+        </member>
+        <member name="M:StoreBaeltTicketLibrary.StoreBaeltsCar.Price(System.Boolean)">
+            <summary>
+            Get price of a ticket and ask if the vehicle has the Brobizz
+            </summary>
+            <param name="brobizz">If the user has brobizz</param>
+            <returns>The price</returns>
+        </member>
+        <member name="M:StoreBaeltTicketLibrary.StoreBaeltsCar.VehicleType">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>

@@ -11,10 +11,18 @@ namespace TicketClassLibrary
         private string _licenseplate;
         private DateTime _date;
 
-        /// <inheritdoc/>
-        public override double Price()
+        public MC(string licenseplate, DateTime date)
         {
-            return 125; 
+            Licenseplate = licenseplate;
+            Date = date;
+        }
+
+        /// <inheritdoc/>
+        public override double Price(bool brobizz)
+        {
+            double price = 125;
+            if (brobizz) price *= 0.95; 
+            return price; 
         }
 /// <inheritdoc/>
 

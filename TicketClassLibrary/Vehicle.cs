@@ -20,7 +20,7 @@ namespace TicketClassLibrary
         /// Get the price of a vehicle
         /// </summary>
         /// <returns>Price of a vehicle</returns>
-        public abstract double Price();
+        public abstract double Price(bool brobizz);
 
         /// <summary>
         /// Licenseplate for vehicle

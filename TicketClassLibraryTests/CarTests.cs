@@ -18,7 +18,7 @@ namespace TicketClassLibrary.Tests
         [TestInitialize]
         public void Setup()
         {
-            c = new Car("0000000", DateTime.Now);
+            c = new Car("0000000", DateTime.Today);
         }
         [TestMethod]
         public void TestNewCar()
@@ -38,7 +38,31 @@ namespace TicketClassLibrary.Tests
         public void PriceTest()
         {
             double expected = 240; 
-            double actual = c.Price();
+            double actual = c.Price(false);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod()]
+        public void PriceTestTrue()
+        {
+            double expected = 240*0.95;
+            double actual = c.Price(true);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void TestLicenseplate()
+        {
+            string expected = "0000000";
+            string actual = c.Licenseplate;
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void TestDateTime()
+        {
+            DateTime expected = DateTime.Today;
+            DateTime actual = c.Date; 
             Assert.AreEqual(expected, actual);
         }
     }
