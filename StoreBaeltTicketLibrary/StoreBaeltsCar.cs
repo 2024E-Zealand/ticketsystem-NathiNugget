@@ -18,7 +18,8 @@ namespace StoreBaeltTicketLibrary
         }
 
         /// <summary>
-        /// Get price of a ticket and ask if the vehicle has the Brobizz
+        /// Get price of a ticket and ask if the vehicle has the Brobizz. 
+        /// Additionally, if it is Sunday or Saturday, the vehicle gets 20% discount
         /// </summary>
         /// <param name="brobizz">If the user has brobizz</param>
         /// <returns>The price</returns>

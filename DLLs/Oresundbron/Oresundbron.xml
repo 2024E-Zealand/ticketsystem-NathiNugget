@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Oresundbron</name>
+    </assembly>
+    <members>
+        <member name="T:Oresundbron.OresundCar">
+            <summary>
+            This class represents a Car on the Oresund project. It inherits from Car on TicketClassLib DLL
+            </summary>
+        </member>
+        <member name="M:Oresundbron.OresundCar.#ctor(System.String,System.DateTime)">
+            <summary>
+            Constructor passing arguments to base
+            </summary>
+            <param name="lPlate">Licenseplate</param>
+            <param name="lDate">Date</param>
+        </member>
+        <member name="M:Oresundbron.OresundCar.Price(System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Oresundbron.OresundCar.VehicleType">
+            <inheritdoc/>
+        </member>
+        <member name="T:Oresundbron.OresundMC">
+            <summary>
+            This class represents an MC on Oresund using the Storebaelt DLL
+            </summary>
+        </member>
+        <member name="M:Oresundbron.OresundMC.#ctor(System.String,System.DateTime)">
+            <summary>
+            Constructor passign arguments to the base-constructor
+            </summary>
+            <param name="licenseplate">Licenseplate</param>
+            <param name="date">Date</param>
+        </member>
+        <member name="M:Oresundbron.OresundMC.VehicleType">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>

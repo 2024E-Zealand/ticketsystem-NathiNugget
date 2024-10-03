@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>StoreBaeltTicketLibrary</name>
+    </assembly>
+    <members>
+        <member name="T:StoreBaeltTicketLibrary.StoreBaeltsCar">
+            <summary>
+            This class inherits from Car using the DLL and has extra savings on Saturdays and Sundays
+            </summary>
+        </member>
+        <member name="M:StoreBaeltTicketLibrary.StoreBaeltsCar.#ctor(System.String,System.DateTime)">
+            <summary>
+            This constructor calls to Car
+            </summary>
+            <param name="lPlate">License plate</param>
+            <param name="lDate">Date</param>
+        </member>
+        <member name="M:StoreBaeltTicketLibrary.StoreBaeltsCar.Price(System.Boolean)">
+            <summary>
+            Get price of a ticket and ask if the vehicle has the Brobizz. 
+            Additionally, if it is Sunday or Saturday, the vehicle gets 20% discount
+            </summary>
+            <param name="brobizz">If the user has brobizz</param>
+            <returns>The price</returns>
+        </member>
+        <member name="M:StoreBaeltTicketLibrary.StoreBaeltsCar.VehicleType">
+            <inheritdoc/>
+        </member>
+        <member name="T:StoreBaeltTicketLibrary.Ticket">
+            <summary>
+            Ticket class containing info about which vehicle bought a ticket as well as price for the ticket.
+            </summary>
+        </member>
+        <member name="M:StoreBaeltTicketLibrary.Ticket.#ctor(TicketClassLibrary.Vehicle,System.Boolean)">
+            <summary>
+            Constructor for Ticket-class
+            </summary>
+            <param name="v">Vehicle for the ticket</param>
+            <param name="brobizz">Does the vehicle use a BroBizz?</param>
+        </member>
+        <member name="P:StoreBaeltTicketLibrary.Ticket.VehicleInstance">
+            <summary>
+            Vehicle this Ticket is credited to
+            </summary>
+        </member>
+        <member name="P:StoreBaeltTicketLibrary.Ticket.Price">
+            <summary>
+            Property for price of the Ticket-instance
+            </summary>
+        </member>
+        <member name="M:StoreBaeltTicketLibrary.Ticket.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:StoreBaeltTicketLibrary.TicketRepository">
+            <summary>
+            Class to contain tickets for vehicles crossing the Storebaelt-bridge
+            </summary>
+        </member>
+        <member name="M:StoreBaeltTicketLibrary.TicketRepository.#ctor">
+            <summary>
+            Constructor in order to use instance-methods
+            </summary>
+        </member>
+        <member name="P:StoreBaeltTicketLibrary.TicketRepository.TicketList">
+            <summary>
+            TicketList static property
+            </summary>
+        </member>
+        <member name="M:StoreBaeltTicketLibrary.TicketRepository.AddTicket(TicketClassLibrary.Vehicle,System.Boolean)">
+            <summary>
+            Method to buy a ticket
+            </summary>
+            <param name="t">Ticket instance to add</param>
+            <param name="brobizz">Does the vehicle use brobizz for this instance</param>
+        </member>
+        <member name="M:StoreBaeltTicketLibrary.TicketRepository.PrintAllTickets">
+            <summary>
+            Print all Tickets in the List
+            </summary>
+        </member>
+        <member name="M:StoreBaeltTicketLibrary.TicketRepository.PrintTicketsForLicenseplate(System.String)">
+            <summary>
+            Prints all Tickets related to a given Licenseplate
+            </summary>
+            <param name="lplate"></param>
+        </member>
+    </members>
+</doc>
